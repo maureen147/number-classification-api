@@ -8,10 +8,10 @@ const classifyNumberController = async (req, res) => {
     const num = Number(number);
 
     if (!number) {
-        return res.status(400).json({ error: true, message: "Number is required!" });
+        return res.status(400).json({ error: true, number: "" });
     }
     if (isNaN(num)) {
-        return res.status(400).json({ number: "alphabet", error: true });
+        return res.status(400).json({ number, error: true });
     }
 
     try {
